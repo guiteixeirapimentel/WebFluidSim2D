@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# WebAssembly output
+*.data
+game
+*.html
+*.js
+*.wasm
