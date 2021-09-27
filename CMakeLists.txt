@@ -6,6 +6,14 @@ target_compile_features(project_options INTERFACE cxx_std_17)
 
 include_directories(src external/AMGCL)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB CFDSOURCES "src/CFD/*.cpp")
 file(GLOB CONTROLSSOURCES "src/Controls/*.cpp")
